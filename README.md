@@ -2,14 +2,14 @@
 
 A modern, responsive NGO website built with **React**, **TypeScript**, and **Tailwind CSS**, featuring an elegant home page, a volunteer registration form, and an about us section.
 
-> ✨ Live Demo: [Coming Soon on Vercel](#deployment)
+> ✨ Live Demo:[GO LIVE](https://ngo-website-six-blond.vercel.app/)
 
 ---
 
 ## 📸 Screenshots
 
-| Home Page                       | Volunteer Form                       | About Us                          |
-| ------------------------------- | ------------------------------------ | --------------------------------- |
+| Home Page                            | Volunteer Form                            | About Us                               |
+| ------------------------------------ | ----------------------------------------- | -------------------------------------- |
 | ![Home](public/screenshots/home.png) | ![Form](public/screenshots/volunteer.png) | ![About](public/screenshots/about.png) |
 
 > 📷 _Add screenshots in `screenshots/` folder after deployment_
