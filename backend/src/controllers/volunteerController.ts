@@ -21,3 +21,33 @@ export const getAllVolunteers = async (_req: Request, res: Response) => {
     res.status(500).json({ error: 'Failed to fetch applicants.' });
   }
 };
+
+export const updateVolunteer = async (req: Request, res: Response) => {
+  try {
+    const updated = await Volunteer.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+
+    if (!updated) {
+      return res.status(404).json({ message: 'Volunteer not found.' });
+    }
+
+    res.status(200).json(updated);
+  } catch (err) {
+    res.status(500).json({ message: 'Error updating application.' });
+  }
+};
+
+export const deleteVolunteer = async (req: Request, res: Response) => {
+  try {
+    const deleted = await Volunteer.findByIdAndDelete(req.params.id);
+
+    if (!deleted) {
+      return res.status(404).json({ message: 'Volunteer not found.' });
+    }
+
+    res.status(200).json({ message: 'Application deleted.' });
+  } catch (err) {
+    res.status(500).json({ message: 'Error deleting application.' });
+  }
+};
