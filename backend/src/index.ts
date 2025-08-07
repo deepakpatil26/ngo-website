@@ -15,6 +15,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Root route (for browser visits or health checks)
+app.get('/', (_req, res) => {
+  res.send('🚀 NGO Backend is live and working!');
+});
+
 // Routes
 app.use('/api/applications', volunteerRoutes);
 
