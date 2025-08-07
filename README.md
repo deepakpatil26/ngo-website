@@ -1,74 +1,75 @@
-# 🌍 HopeForward — NGO Website
+# 🌍 HopeForward — NGO Full-Stack Web App
 
-A modern, responsive NGO website built with **React**, **TypeScript**, and **Tailwind CSS**, featuring an elegant home page, a volunteer registration form, and an about us section.
+A modern MERN + TypeScript web app for NGOs, featuring a public home page, volunteer registration, and admin panel.
 
-> ✨ Live Demo:[GO LIVE](https://ngo-website-six-blond.vercel.app/)
+## 🚀 Live Demo
 
----
+> 🔗 [Live Site](https://ngo-website-mu-seven.vercel.app/)
 
-## 📸 Screenshots
-
-| Home Page                            | Volunteer Form                            | About Us                               |
-| ------------------------------------ | ----------------------------------------- | -------------------------------------- |
-| ![Home](public/screenshots/home.png) | ![Form](public/screenshots/volunteer.png) | ![About](public/screenshots/about.png) |
-
-> 📷 _Add screenshots in `screenshots/` folder after deployment_
-
----
-
-## 🚀 Features
-
-- ✅ Fully responsive layout (mobile-first)
-- ✅ Clean UI using **Tailwind CSS**
-- ✅ Built with **React + TypeScript**
-- ✅ Modal popups with contextual info
-- ✅ Volunteer form with success confirmation
-- ✅ Easy navigation using **React Router**
-
----
+> 🛠 [API Backend](https://ngo-website-backend-vo8e.onrender.com)
 
 ## 🛠️ Tech Stack
 
-| Tech             | Description                  |
-| ---------------- | ---------------------------- |
-| React            | UI library                   |
-| TypeScript       | Static typing                |
-| Tailwind CSS     | Utility-first CSS framework  |
-| React Router DOM | Client-side routing          |
-| Lucide Icons     | Clean, modern SVG icons      |
-| Vercel           | Deployment and CI/CD hosting |
+- **Frontend:** React, TypeScript, Tailwind CSS, React Router
+- **Backend:** Node.js, Express.js, TypeScript, MongoDB Atlas
+- **Deployment:** Vercel (Frontend), Render (Backend)
 
----
+## 📦 Project Structure
 
-## 📦 Local Development
+```
+ngo-website/
+├── backend/   # Express + MongoDB
+├── frontend/  # React + Tailwind
+└── README.md
+```
 
-To run the project locally:
+## ⚡ Quick Start
 
 ```bash
-# 1. Clone the repository
 git clone https://github.com/deepakpatil26/ngo-website.git
 cd ngo-website
+```
 
-# 2. Install dependencies
+**Frontend**
+
+```bash
+cd frontend
 npm install
+npm start
+```
 
-# 3. Run development server
+**Backend**
+
+```bash
+cd backend
+npm install
 npm run dev
 ```
 
-## 📦 Deployment
+Create `backend/.env`:
 
-To deploy the project:
-
-1. Build the project:
-
-```bash
-npm run build
+```env
+PORT=5000
+MONGO_URI=your_mongo_connection_string
 ```
 
-2. Deploy the `build` folder to your hosting provider (e.g., Vercel, Netlify, etc.).
-3. For Vercel, you can connect your GitHub repository and deploy directly from there.
+## 🌐 Deployment
 
-## Contributing
+**Backend (Render):**
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+- Build: `cd backend && npm install && npm run build`
+- Start: `cd backend && npm start`
+- Add env vars: `PORT`, `MONGO_URI`
+
+**Frontend (Vercel):**
+
+- Set root to `/frontend`
+- Add env var: `REACT_APP_API_BASE_URL=https://ngo-website-backend-vo8e.onrender.com`
+
+## 🤝 Contributing
+
+Open issues, suggest features, or submit PRs!
+
+---
+
+Built with ❤️ by Deepak

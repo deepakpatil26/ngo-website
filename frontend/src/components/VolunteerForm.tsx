@@ -31,7 +31,12 @@ const VolunteerForm: React.FC = () => {
   const handleFormSubmit = async () => {
     try {
       setError(null);
-      await axios.post('http://localhost:5000/api/applications', formData); // ✅ Update if backend URL changes
+      await axios.post(
+        `${process.env.REACT_APP_API_BASE}/api/applications`,
+        formData
+      );
+
+      // ✅ Update if backend URL changes
       setIsFormSubmitted(true);
       setFormData({
         name: '',
