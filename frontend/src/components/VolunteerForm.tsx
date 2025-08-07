@@ -1,6 +1,7 @@
 // src/components/VolunteerForm.tsx
 import React, { useState } from 'react';
 import { CheckCircle } from 'lucide-react';
+import axios from 'axios';
 
 const VolunteerForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ const VolunteerForm: React.FC = () => {
   });
 
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -26,19 +28,25 @@ const VolunteerForm: React.FC = () => {
     });
   };
 
-  const handleFormSubmit = () => {
-    setIsFormSubmitted(true);
-    setTimeout(() => setIsFormSubmitted(false), 3000);
+  const handleFormSubmit = async () => {
+    try {
+      setError(null);
+      await axios.post('http://localhost:5000/api/applications', formData); // ✅ Update if backend URL changes
+      setIsFormSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        skills: '',
+        availability: '',
+        experience: '',
+        motivation: '',
+      });
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      skills: '',
-      availability: '',
-      experience: '',
-      motivation: '',
-    });
+      setTimeout(() => setIsFormSubmitted(false), 4000);
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -60,6 +68,13 @@ const VolunteerForm: React.FC = () => {
             <span className='text-green-800 font-medium'>
               Thank you! Your application has been submitted successfully.
             </span>
+          </div>
+        )}
+
+        {/* Error message */}
+        {error && (
+          <div className='mb-8 bg-red-50 border border-red-200 rounded-lg p-4 text-red-700'>
+            {error}
           </div>
         )}
 

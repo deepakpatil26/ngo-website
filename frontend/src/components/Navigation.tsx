@@ -20,6 +20,7 @@ const Navigation: React.FC<NavigationProps> = ({
     { label: 'Home', to: '/' },
     { label: 'Volunteer', to: '/volunteer' },
     { label: 'About Us', to: '/about' },
+    { label: 'Admin', to: '/admin' },
   ];
 
   return (
